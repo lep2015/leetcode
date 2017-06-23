@@ -8,8 +8,6 @@ import java.util.Map;
  * source:https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/#/description
  * Created by lverpeng on 2017/6/21.
  *
- * question:
- *
  * Given an array of integers, find two numbers such that they add up to a specific target number.
  *
  * The function twoSum should return indices of the two numbers such that they add up to the target,
