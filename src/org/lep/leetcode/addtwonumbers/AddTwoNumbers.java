@@ -58,6 +58,29 @@ public class AddTwoNumbers {
         return numbers;
     }
 
+    public List<Integer> addTwoNumbersRefactor (List<Integer> num1, List<Integer> num2) {
+        List<Integer> result = new ArrayList<Integer>();
+        int size = num1.size() > num2.size() ? num1.size() : num2.size();
+        int carry = 0;
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum = carry + getNumber(num1, i) + getNumber(num2, i);
+            carry = sum / 10;
+            result.add(sum % 10);
+        }
+        if (carry > 0) {
+            result.add(carry);
+        }
+        return result;
+    }
+
+    private int getNumber(List<Integer> numbers, int i) {
+        if (i < 0 || i >= numbers.size()) {
+            return 0;
+        }
+        return numbers.get(i);
+    }
+
     public static void main(String[] args) {
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         List<Integer> num1 = new ArrayList<Integer>(){{
@@ -71,5 +94,6 @@ public class AddTwoNumbers {
             add(4);
         }};
         System.out.println(addTwoNumbers.addTwoNumbers(num1, num2));
+        System.out.println(addTwoNumbers.addTwoNumbersRefactor(num1, num2));
     }
 }
