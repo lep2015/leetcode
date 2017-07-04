@@ -86,7 +86,7 @@ public class ReverseInteger {
         System.out.println(reverseInteger.reverse(2147447412) + " === " + "2147447412");
         System.out.println(reverseInteger.reverse(2147447412) + " === " + "2147447412");
 
-
+        // overfow
         System.out.println(reverseInteger.reverse(1000000003) + " === " + "0");
         System.out.println(reverseInteger.reverse(2147483647) + " === " + "0");
         System.out.println(reverseInteger.reverse(-2147483648) + " === " + "0");
