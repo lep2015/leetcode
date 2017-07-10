@@ -64,6 +64,15 @@ public class LetterCombinationOfaPhoneNumber {
         return result.toArray(new String[result.size()]);
     }
 
+    /**
+     * 深度优先
+     *
+     * @param numStr
+     * @param index
+     * @param result
+     * @param str
+     * @return
+     */
     public String letterConbinationByDFS (String numStr, int index, List<String> result, String str) {
         if (index >= numStr.length()) {
             return str;
@@ -77,7 +86,6 @@ public class LetterCombinationOfaPhoneNumber {
             str += map.get(ch)[j] + "";
 
             str = letterConbinationByDFS(numStr, index + 1, result, str);
-//            System.out.println(str);
             if (!str.equals("")) {
                 result.add(str);
                 str = str.substring(0, str.length() - 1);
@@ -85,18 +93,6 @@ public class LetterCombinationOfaPhoneNumber {
         }
         return str;
     }
-
-    private class StrStack {
-        char lastChar = ' ';
-        String s = "";
-        List<String> list = new ArrayList<String>();
-
-        public StrStack(char lastChar, String s) {
-            this.lastChar = lastChar;
-            this.s = s;
-        }
-    }
-
 
     public static void main(String[] args) {
         LetterCombinationOfaPhoneNumber letterCombinationOfaPhoneNumber = new LetterCombinationOfaPhoneNumber();
