@@ -137,7 +137,7 @@ public class MergeKList {
         list2.value = 2;
         Node pointer2 = list2;
         Node list3 = new Node();
-        list2.value = 3;
+        list3.value = 3;
         Node pointer3 = list3;
         for (int i = 4; i < 20; i++) {
             Node node = new Node();
@@ -156,15 +156,15 @@ public class MergeKList {
 
         List<Node> list = new ArrayList<Node>();
         list.add(list1);
-        list.add(list2);
-        list.add(list3);
+        list.add(list1);
+        list.add(list1);
         MergeKList mergeKList = new MergeKList();
-        Node result = mergeKList.merge(list);
-        print(result);
+//        Node result = mergeKList.merge(list);
+//        print(result);
 
         System.out.println();
 
-        result = mergeKList.merge0(list);
+        Node result = mergeKList.merge0(list);
         print(result);
 
     }
