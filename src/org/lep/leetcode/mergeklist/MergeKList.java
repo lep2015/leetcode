@@ -52,6 +52,9 @@ public class MergeKList {
                 head = node;
                 current = node;
             } else {
+                if (current == node) {
+                    throw  new IllegalArgumentException("出现了循环引用，可能是多个链表中有相同的元素");
+                }
                 current.next = node;
                 current = current.next;
             }
