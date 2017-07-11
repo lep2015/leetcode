@@ -3,6 +3,7 @@ package org.lep.leetcode.mergeklist;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Source : https://oj.leetcode.com/problems/merge-k-sorted-lists/
@@ -31,6 +32,35 @@ public class MergeKList {
 
     }
 
+    /**
+     * 对k个链表做归并排序，比较k个元素的时候使用最小堆排序
+     *
+     * @param headList
+     * @return
+     */
+    public Node merge0 (List<Node> headList) {
+        PriorityQueue<Node> priorityQueue = new PriorityQueue<Node>();
+        for (Node node : headList) {
+            priorityQueue.add(node);
+        }
+
+        Node head = null;
+        Node current = null;
+        while (priorityQueue.size() > 0) {
+            Node node = priorityQueue.poll();
+            if (head == null) {
+                head = node;
+                current = node;
+            } else {
+                current.next = node;
+                current = current.next;
+            }
+            if (node.next != null) {
+                priorityQueue.add(node.next);
+            }
+        }
+        return head;
+    }
 
     /**
      * 归并排序
@@ -73,7 +103,7 @@ public class MergeKList {
 
 
 
-    private static class Node {
+    private static class Node  implements Comparable<Node>{
         int value;
         Node next;
 
@@ -83,6 +113,11 @@ public class MergeKList {
                     "value=" + value +
                     ", next=" + (next == null ? "" : next.value) +
                     '}';
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return this.value - o.value;
         }
     }
 
@@ -125,6 +160,11 @@ public class MergeKList {
         list.add(list3);
         MergeKList mergeKList = new MergeKList();
         Node result = mergeKList.merge(list);
+        print(result);
+
+        System.out.println();
+
+        result = mergeKList.merge0(list);
         print(result);
 
     }
