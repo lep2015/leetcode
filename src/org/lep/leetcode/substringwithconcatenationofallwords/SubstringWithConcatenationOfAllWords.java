@@ -55,6 +55,7 @@ public class SubstringWithConcatenationOfAllWords {
             }
         }
 
+        int loopCount = 0;
         int arrLen = strArr.length;
         int wordLen = strArr[0].length();
         int arrStrLen = arrLen * wordLen;
@@ -63,6 +64,7 @@ public class SubstringWithConcatenationOfAllWords {
             int j = 0;
             Map<String, Integer> subStrMap = new HashMap<String, Integer>();
             for (j = 0; j < arrLen; j++) {
+                loopCount ++;
                 String subStr = S.substring(i + j * wordLen, i + j * wordLen + wordLen);
                 if (!wordMap.keySet().contains(subStr)) {
                     break;
@@ -83,6 +85,7 @@ public class SubstringWithConcatenationOfAllWords {
             }
 
         }
+        System.out.println("loopCount------->" + loopCount);
         int[] res = new int[result.size()];
         for (int i = 0; i < result.size(); i++) {
             res[i] = result.get(i);
@@ -113,10 +116,13 @@ public class SubstringWithConcatenationOfAllWords {
         List<Integer> result = new ArrayList<Integer>();
         int wordLen = strArr[0].length();
         Map<String, Integer> subStrMap = new HashMap<String, Integer>();
+
+        int loopCount = 0;
         for (int i = 0; i < wordLen; i++) {
             int count = 0;
             int left = i;       // 记录待匹配子串起始位置
             for (int j = i; j < S.length() - wordLen; j += wordLen) {
+                loopCount ++;
                 String subStr = S.substring(j, j + wordLen);
                 if (wordMap.keySet().contains(subStr)) {
                     if (subStrMap.keySet().contains(subStr)) {
@@ -156,6 +162,8 @@ public class SubstringWithConcatenationOfAllWords {
                 }
             }
         }
+
+        System.out.println("loopCount------->" + loopCount);
 
         int[] res = new int[result.size()];
         for (int i = 0; i < result.size(); i++) {
