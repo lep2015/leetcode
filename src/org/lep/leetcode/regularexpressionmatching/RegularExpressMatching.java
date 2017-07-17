@@ -24,6 +24,10 @@ package org.lep.leetcode.regularexpressionmatching;
  * isMatch("ab", ".*") → true
  * isMatch("aab", "c*a*b") → true
  *
+ * =============== 关于星号 ===================
+ * isMatch("aab", "c*a*b") → true
+ * 星号是匹配前面一个字符零次或者多次，上面第一个星号前面是c，那么目标字符可以没有c，所以上面的结果是true
+ *
  */
 public class RegularExpressMatching {
 
@@ -34,7 +38,7 @@ public class RegularExpressMatching {
      *
      * 如果pattern为空，str也为空，返回true，否则返回false
      * 如果pattern的长度为1，str的长度也为1，两个字符相同或者pattern为 '.' 则返回true，否则返回false
-     * 如果pattern第二个字符为'*' ，s长度为空返回false，否则，如果第一个字符相同或者p的第一个为 '.' 则递归比较s.subString(1) p.subString(1)，否则返回false
+     * 如果pattern第二个字符不为'*' ，s长度为空返回false，否则，如果第一个字符相同或者p的第一个为 '.' 则递归比较s.subString(1) p.subString(1)，否则返回false
      * 如果pattern第二个字符为 '*' ，如果s不为空并且s和p第一个字符相同的时候：
      *      匹配零次：递归比较s和p.subString(2)，如果匹配成功返回true
      *      匹配多次：将s向前移动一个字符进行匹配
