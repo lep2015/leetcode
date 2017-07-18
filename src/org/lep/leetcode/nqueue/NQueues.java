@@ -43,9 +43,17 @@ public class NQueues {
         return result;
     }
 
+    /**
+     * n皇后问题，皇后所在位置的行、列、对角线都不能有其他皇后存在
+     * 使用递归解决
+     *
+     * @param board
+     * @param row
+     * @param result
+     */
     public void revursion (int[][] board, int row, List<String> result) {
         if (row == board.length) {
-            // 找到解，打印解
+            // 找到解
             StringBuilder stringBuilder = new StringBuilder();
             if (result.size() > 0) {
                 stringBuilder.append("\n");
