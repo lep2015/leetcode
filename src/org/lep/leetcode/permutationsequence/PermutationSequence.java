@@ -97,11 +97,10 @@ public class PermutationSequence {
             arr.add(i+1);
         }
         int index = 0;
-        // 因为数组下标是从0开始的，比如当 n=4,k=24 的时候，计算出下标index=4，下标越界，所以这里先减1？
-        // 感觉理由有点牵强，再想想
+        // 因为数组下标是从0开始的，k--就是为了让数组下标从0开始
         k--;
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < fatorial.length; i++) {
+        while (n > 0) {
             index = k / fatorial[n-1];
             result.append(arr.get(index));
             arr.remove(index);
