@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * source:https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/#/description
+ * Source : https://oj.leetcode.com/problems/two-sum/
  * Created by lverpeng on 2017/6/21.
  *
  * Given an array of integers, find two numbers such that they add up to a specific target number.
