@@ -1,4 +1,4 @@
-package org.lep.leetcode.minimumwindowsubstring;
+package org.lep.leetcode.window.minimumwindowsubstring;
 
 import java.util.HashMap;
 import java.util.Map;

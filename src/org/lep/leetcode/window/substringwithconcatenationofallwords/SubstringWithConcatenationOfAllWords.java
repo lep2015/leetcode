@@ -1,6 +1,4 @@
-package org.lep.leetcode.substringwithconcatenationofallwords;
-
-import org.lep.leetcode.parseint.IntegerParser;
+package org.lep.leetcode.window.substringwithconcatenationofallwords;
 
 import java.util.*;
 

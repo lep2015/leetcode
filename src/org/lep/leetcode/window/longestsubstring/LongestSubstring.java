@@ -1,4 +1,4 @@
-package org.lep.leetcode.longestsubstring;
+package org.lep.leetcode.window.longestsubstring;
 
 import java.util.HashSet;
 import java.util.Set;
