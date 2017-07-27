@@ -89,6 +89,23 @@ public class Combination {
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * 不使用递归，使用循环
+     * @param n
+     * @param k
+     */
+    public void combine2 (int n, int k) {
+        for (int i = 1; i <= n-k; i++) {
+            for (int j = i + 1; j < n-k; j++) {
+
+            }
+
+        }
+    }
+
+>>>>>>> 03c29a2cd4f472d1ce7cf0a94a49920504f5d7f4
     public static void print (List<Integer[]> list) {
         for (Integer[] arr : list) {
             System.out.println(Arrays.toString(arr));
