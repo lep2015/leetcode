@@ -64,7 +64,7 @@ public class RemoveDuplicates {
             return null;
         }
         Node head = new Node();
-        head.value = arr[1];
+        head.value = arr[0];
         Node pointer = head;
         for (int i = 1; i < arr.length; i++) {
             Node node = new Node();
